@@ -1,0 +1,92 @@
+-------------------------------------------------------------------------------------------
+Data Modelo: student dropout
+1. https://www.kaggle.com/code/jeevabharathis/student-dropout-analysis-for-school-education
+2. https://www.kaggle.com/code/subhajeetdas/student-dropout-prediction
+-------------------------------------------------------------------------------------------
+
+
+-------------------------------------------------------------------------------------------
+Diccionario de datos para la data adaptada:
+Variables o columnas para la predicción de estudiantes en la Universidad Peruana Unión
+- Nombres Completos (String)
+- Género (Categoría binaria: H = Hombre, M = Mujer)
+- Modo de solicitud (Categoría: Examen de admisión ordinario, Ingreso por traslado externo, Ingreso por traslado interno, Ingreso por convenio o beca especial, Ingreso directo, Ingreso por reingreso): método o vía por la que el estudiante postuló a la universidad
+- Orden de solicitud (Numérico: Primera Opción, Segunda Opción, Tercera Opción): El orden en que el estudiante presentó su solicitud. 
+- Facultad (Categoría): Representa la facultad de estudios en el que fue admitido el estudiante
+- Trasladado(a) (Categoría binaria: No, Sí): Esto es porque la universidad también recibe estudiante que se trasladan o dejan sus estudios en otra universidad y se unen a la UPeU
+- Necesidades educativas especiales (Categoría binaria: No, Sí): Si el estudiante tiene alguna necesidad educativa especial.
+- Procedencia (Categoría: Lima, Provincia, Extranjero): Esto es para identificar la procedencia del estudiante
+- Vivienda (Categoria: Residencia, Familiares, Alquila cuarto): Esto es para conocer si el estudiante vive en la residencia, con familia en lima, alquila cuarto, etc.
+- Crianza Adventista (Categoría binaria: No, Sí): Esto es para identificar si alumno viene de familia Adventista o no
+- Estado civil (Numérico: Soltero, Casado): El estado civil del estudiante
+- Titulación de la madre (Categoría: Sin estudios, Primaria, Secundaria, Técnica, Educación Superior): representan el nivel educativo alcanzado de la madre.
+- Titulación del padre (Categoría: Sin estudios, Primaria, Secundaria, Técnica, Educación Superior): representan el nivel educativo alcanzado del padre.
+- Ocupación de la madre (Categoría): Ocupación de la madre del estudiante.
+- Ocupación del padre (Categoría): Ocupación del padre del estudiante.
+- Formas de Pago (Categoria; Armadas, Contado, Otros): Esto es para conocer el método de pago de los estudiantes
+- Descuento (Numerico: En soles peruanos): Esto es para identificar cuanto de descuento tiene el estudiante.
+- Deuda (Numerico: En soles peruanos): Si el estudiante es deudor y cuanto debe.
+- Matrícula al día (Categoría binaria: No, Sí): Si la matrícula del estudiante está al día.
+- Becario (Categoría binaria: No, Sí): Si el estudiante es becario.
+- Edad (Numérico): Edad en el momento de la matriculación: La edad del estudiante en el momento de la matriculación.
+- Unidades curriculares 1.º semestre (matriculadas) (Numérico): Número de unidades curriculares matriculadas por el estudiante en el primer semestre.
+- Unidades curriculares 1.º semestre (evaluadas) (Numérico): Número de unidades curriculares evaluadas por el estudiante en el primer semestre
+- Unidades curriculares 1.º semestre (aprobadas) (Numérico): Número de unidades curriculares aprobadas por el estudiante en el primer semestre. 
+- Desarrollo de Tareas (Porcentaje): Esto es para medir si el estudiante cumple con sus tareas
+- Asistencia (Porcentaje): Esto es para medir las asistencias del estudiante
+- Promedio ponderado del semestre (nota numérica): Esto es para conocer la nota ponderada por semestre del estudiante
+- Situación laboral (Categoría: No Trabaja, Medio Tiempo, Tiempo completo): Para conocer si el estudiante trabaja o no
+- Condición Final (Categoria: Graduado, Desertó): Para conocer el desempeño o  deserción del estudiante
+- ¿La distancia y la separación de mi familia para estudiar en la universidad me hacen considerar abandonar mis estudios.? (Numero - escala de Likert de 1 a 5)
+- ¿La incompatibilidad entre mis horarios de trabajo y las clases me llevaría a abandonar la carrera.? (Numero - escala de Likert de 1 a 5)
+- ¿La calidad de la enseñanza y las metodologías docentes me desmotivan al punto de pensar en abandonar? (Numero - escala de Likert de 1 a 5)
+- ¿La falta de recursos económicos, becas o facilidades de pago me haría interrumpir mis estudios? (Numero - escala de Likert de 1 a 5)
+- ¿Me siento poco integrado/a con mis compañeros y actividades universitarias, lo que me hace pensar en abandonar? (Numero - escala de Likert de 1 a 5)
+- ¿El estrés, la ansiedad u otros problemas de bienestar asociados a la vida universitaria me hacen considerar abandonar? (Numero - escala de Likert de 1 a 5)
+- ¿La falta de seguridad dentro o cerca del campus influye en mi intención de abandonar? (Numero - escala de Likert de 1 a 5)
+- ¿La retroalimentación tardía o poco clara de los docentes afecta mi continuidad y me hace pensar en abandonar? (Numero - escala de Likert de 1 a 5)
+- ¿La carrera/facultad donde estoy matriculado no cumple mis expectativas y me hace pensar en retirarme? (Numero - escala de Likert de 1 a 5)
+- ¿La dificultad de los cursos supera mis capacidades actuales y me lleva a considerar dejar la universidad? (Numero - escala de Likert de 1 a 5)
+- ¿Cuento con poco apoyo familiar para continuar mis estudios y eso me hace considerar el abandono? (Numero - escala de Likert de 1 a 5)
+- ¿Me cuesta adaptarme a la cultura y normas institucionales, lo que afecta mi permanencia? (Numero - escala de Likert de 1 a 5)
+- ¿No veo una trayectoria profesional clara a partir de mi carrera actual, por lo que consideraría retirarme? (Numero - escala de Likert de 1 a 5)
+
+
+
+
+
+Estos datos es para la variable Facultad:
+| Código | Facultad                                                      |
+| ------ | ------------------------------------------------------------- |
+| 1      | Ciencias Empresariales                                        |
+| 2      | Ciencias Humanas y Educación                                  |
+| 3      | Ingeniería y Arquitectura                                     |
+| 4      | Ciencias de la Salud                                          |
+| 5      | Teología                                                      |
+
+
+
+Estos datos son para las variables de Ocupación de la madre y Ocupación del padre:
+| Código | Categoría ocupacional simplificada       | Ejemplos incluidos                                                                            |
+| ------ | ---------------------------------------- | --------------------------------------------------------------------------------------------- |
+| 1      | Profesionales y técnicos                 | Ingenieros, médicos, docentes universitarios, contadores, enfermeras, técnicos especializados |
+| 2      | Empleados administrativos / de oficina   | Secretarias, asistentes, oficinistas, administrativos, recepcionistas                         |
+| 3      | Comerciantes / vendedores                | Dueños de negocios, bodegueros, vendedores ambulantes, comerciantes minoristas                |
+| 4      | Obreros / trabajadores manuales          | Albañiles, carpinteros, mecánicos, choferes, electricistas                                    |
+| 5      | Agricultores / ganaderos / pescadores    | Trabajadores rurales, campesinos, ganaderos, agricultores                                     |
+| 6      | Militares / policías / fuerzas del orden | Policía, ejército, marina, serenazgo                                                          |
+| 7      | Servicios personales y domésticos        | Cocineros, meseros, vigilantes, empleadas del hogar, conductores particulares                 |
+| 8      | Ama de casa / labores del hogar          | Madres o padres que no ejercen actividad laboral remunerada                                   |
+| 9      | Desempleado / sin ocupación              | Personas que buscan trabajo, jubilados sin actividad económica                                |
+| 10     | Otros / no especificado                  | Cualquier ocupación no clasificada en las anteriores                                          |
+
+Estos datos son para las preguntas que están evaluadas con la escala de Likert del 1 al 5
+| Código | Categoría de descuento                                            |
+| ------ | ----------------------------------------------------------------- |
+| 1      | Totalmente en desacuerdo (riesgo muy bajo)                        |
+| 2      | En desacuerdo (bajo)                                              |
+| 3      | Ni de acuerdo ni en desacuerdo (medio)                            |
+| 4      | De acuerdo (alto)                                                 |
+| 5      | Totalmente de acuerdo (muy alto)                                  |
+
+-------------------------------------------------------------------------------------------
